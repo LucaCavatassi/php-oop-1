@@ -3,29 +3,43 @@
 
 class Movie {
     public string $name;
-    public int $duration;
-    public string $director;
-    public string $writer;
+    private int $duration;
+    private string $director;
+    private string $writer;
     public Genre $genre;
 
 
-    public function __construct(string $name, string $director, string $writer, Genre $genre)
+    public function __construct(string $name, Genre $genre)
     {
         $this->name = $name;
-        $this->director = $director;
-        $this->writer = $writer;
         $this->genre = $genre;
     }
 
+    // DURATION
     public function setDuration (int $duration) {
         if ($duration < 0) {
             throw new Exception("La lunghezza deve essere maggiore di 0min");
         }
         $this->duration = $duration;
     }
-
     public function getDuration() {
         return $this->duration . "min";
     }
 
+    // DIRECTOR
+    public function setDirector (string $director){
+        $this->director = $director;
+    }
+
+    public function getDirector() {
+        return "Directed by " . $this->director;
+    }
+    //WRITER
+    public function setWriter (string $writer){
+        $this->writer = $writer;
+    }
+
+    public function getWriter() {
+        return "Written by " . $this->writer;
+    }
 };
