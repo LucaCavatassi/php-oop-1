@@ -20,6 +20,14 @@ class Movie {
         $this->cast[] = $actor;
     }
 
+    public function getCast() {
+        $cast = "";
+        foreach ($this->cast as $curActor) {
+            $cast .= "Actor - " . $curActor->name . "<br>" . "Role - " . $curActor->role . "<br>"."<br>";
+        }
+        return $cast;
+    }
+
 
     // DURATION
     public function setDuration (int $duration) {
