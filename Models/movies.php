@@ -6,7 +6,7 @@ class Movie {
     private string $director;
     private string $writer;
     public Genre $genre;
-    public array $cast;
+    private array $cast;
     
     public function __construct(string $name, Genre $genre)
     {
