@@ -1,19 +1,25 @@
 <?php
-
-
+require_once "Models/actor.php";
 class Movie {
     public string $name;
     private int $duration;
     private string $director;
     private string $writer;
     public Genre $genre;
-
-
+    public array $cast;
+    
     public function __construct(string $name, Genre $genre)
     {
         $this->name = $name;
         $this->genre = $genre;
     }
+
+    // CAST
+    public function setCast (string $name, string $role){
+        $actor = new Actor($name, $role);
+        $this->cast[] = $actor;
+    }
+
 
     // DURATION
     public function setDuration (int $duration) {
